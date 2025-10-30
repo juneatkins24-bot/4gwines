@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4G Wine Estate | Gesamtkunstwerk</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Crimson+Pro:wght@200;300;400&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           RESET - Scoped to container
+        ======================================== */
+        .fg-container * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* ========================================
+           MAIN CONTAINER
+        ======================================== */
+        .fg-container {
+            font-family: 'Work Sans', sans-serif;
+            color: #000000;
+            background: #F5F5F0;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+        
+        /* ========================================
+           HERO SECTION
+        ======================================== */
+        .fg-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000000;
+            overflow: hidden;
+        }
+        
+        .fg-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        
+        .fg-hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+        
+        .fg-hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            font-weight: 300;
+            color: #F5F5F0;
+            letter-spacing: 0.15em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .fg-hero-rule {
+            width: 150px;
+            height: 1px;
+            background: #D4AF37;
+            margin: 0 auto 30px;
+        }
+        
+        .fg-hero-subtitle {
+            font-family: 'Crimson Pro', serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: #F5F5F0;
+            font-style: italic;
+            letter-spacing: 0.05em;
+        }
+        
+        /* ========================================
+           QUOTE SECTION
+        ======================================== */
+        .fg-quote-section {
+            padding: 120px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .fg-quote-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 28px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #2C2C2C;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .fg-quote-author {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: #8B8680;
+            text-transform: uppercase;
+        }
+        
+        /* ========================================
+           TABLE SECTIONS (BACKSTORY, WINES, CRAFT, MOMENT)
+        ======================================== */
+        .fg-backstory-section,
+        .fg-wines-section,
+        .fg-craft-section,
+        .fg-moment-section {
+            padding: 120px 20px;
+            background: #FFFFFF;
+        }
+        
+        .fg-backstory-container,
+        .fg-wines-container,
+        .fg-craft-container,
+        .fg-moment-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .fg-backstory-title,
+        .fg-wines-title,
+        .fg-craft-title,
+        .fg-moment-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .fg-backstory-subtitle,
+        .fg-craft-subtitle,
+        .fg-moment-subtitle {
+            font-family: 'Crimson Pro', serif;
+            font-size: 18px;
+            font-weight: 300;
+            text-align: center;
+            font-style: italic;
+            color: #5C2C2E;
+            margin-bottom: 60px;
+        }
+        
+        .fg-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        
+        .fg-table tr {
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .fg-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .fg-table td {
+            padding: 20px 0;
+            vertical-align: top;
+        }
+        
+        .fg-table-label {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #000000;
+            width: 30%;
+            padding-right: 30px;
+        }
+        
+        .fg-table-value {
+            font-family: 'Crimson Pro', serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #2C2C2C;
+        }
+        
+        /* ========================================
+           IMAGE BREAKS
+        ======================================== */
+        .fg-image-break {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .fg-break-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* ========================================
+           MOMENT SECTION QUOTE
+        ======================================== */
+        .fg-moment-quote {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #2C2C2C;
+            font-style: italic;
+            text-align: center;
+            margin: 60px auto 20px;
+            max-width: 800px;
+            border-top: 1px solid #D4AF37;
+            border-bottom: 1px solid #D4AF37;
+            padding: 40px 0;
+        }
+        
+        .fg-moment-author {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: #8B8680;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        /* ========================================
+           BOTTLE SHOWCASE SECTION
+        ======================================== */
+        .fg-bottle-section {
+            padding: 120px 20px;
+            background: #FFFFFF;
+            text-align: center;
+        }
+        
+        .fg-bottle-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .fg-bottle-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 0 auto 40px;
+            filter: drop-shadow(0 10px 40px rgba(0,0,0,0.1));
+        }
+        
+        .fg-bottle-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        
+        .fg-bottle-meta {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            color: #8B8680;
+            text-transform: uppercase;
+        }
+        
+        /* ========================================
+           JOURNAL SECTION (THE CTA)
+        ======================================== */
+        .fg-journal-section {
+            padding: 150px 20px;
+            background: #000000;
+            text-align: center;
+        }
+        
+        .fg-journal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 300;
+            color: #F5F5F0;
+            letter-spacing: 0.15em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .fg-journal-subtitle {
+            font-family: 'Crimson Pro', serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: #D4AF37;
+            font-style: italic;
+            margin-bottom: 60px;
+            letter-spacing: 0.05em;
+        }
+        
+        .fg-journal-book {
+            width: 300px;
+            height: 400px;
+            margin: 0 auto 60px;
+            perspective: 1200px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .fg-journal-book-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .fg-journal-book:hover .fg-journal-book-inner {
+            transform: rotateY(-8deg) translateY(-10px);
+        }
+        
+        .fg-journal-book-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 20px 60px rgba(0,0,0,0.4));
+            transition: filter 0.6s ease;
+        }
+        
+        .fg-journal-book:hover .fg-journal-book-image {
+            filter: drop-shadow(0 30px 80px rgba(0,0,0,0.5));
+        }
+        
+        .fg-journal-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: transparent;
+            color: #F5F5F0;
+            border: 2px solid #D4AF37;
+            text-decoration: none;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .fg-journal-button:hover {
+            background: #D4AF37;
+            color: #000000;
+        }
+        
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .fg-footer {
+            padding: 80px 20px;
+            background: #F5F5F0;
+            text-align: center;
+        }
+        
+        .fg-footer-tagline {
+            font-family: 'Crimson Pro', serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: #5C2C2E;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .fg-footer-contact {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            color: #8B8680;
+        }
+        
+        .fg-footer-link {
+            color: #5C2C2E;
+            text-decoration: none;
+            border-bottom: 1px solid #D4AF37;
+            transition: border-color 0.3s ease;
+        }
+        
+        .fg-footer-link:hover {
+            border-bottom-color: #5C2C2E;
+        }
+        
+        /* ========================================
+           MOBILE RESPONSIVE
+        ======================================== */
+        @media (max-width: 768px) {
+            .fg-hero-title {
+                font-size: 42px;
+                letter-spacing: 0.1em;
+            }
+            
+            .fg-hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .fg-quote-section {
+                padding: 80px 20px;
+            }
+            
+            .fg-quote-text {
+                font-size: 22px;
+            }
+            
+            .fg-backstory-section,
+            .fg-wines-section,
+            .fg-craft-section,
+            .fg-moment-section {
+                padding: 80px 20px;
+            }
+            
+            .fg-backstory-title,
+            .fg-wines-title,
+            .fg-craft-title,
+            .fg-moment-title {
+                font-size: 36px;
+            }
+            
+            .fg-table-label {
+                font-size: 12px;
+                width: 35%;
+                padding-right: 15px;
+            }
+            
+            .fg-table-value {
+                font-size: 14px;
+            }
+            
+            .fg-moment-quote {
+                font-size: 20px;
+                padding: 30px 0;
+            }
+            
+            .fg-bottle-section {
+                padding: 80px 20px;
+            }
+            
+            .fg-bottle-image {
+                max-width: 300px;
+            }
+            
+            .fg-bottle-label {
+                font-size: 24px;
+            }
+            
+            .fg-journal-section {
+                padding: 100px 20px;
+            }
+            
+            .fg-journal-title {
+                font-size: 36px;
+            }
+            
+            .fg-journal-subtitle {
+                font-size: 16px;
+            }
+            
+            .fg-journal-book {
+                width: 220px;
+                height: 300px;
+            }
+            
+            .fg-journal-button {
+                padding: 15px 40px;
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .fg-hero {
+                min-height: 500px;
+            }
+            
+            .fg-hero-title {
+                font-size: 32px;
+            }
+            
+            .fg-hero-subtitle {
+                font-size: 14px;
+            }
+            
+            .fg-quote-text {
+                font-size: 18px;
+            }
+            
+            .fg-backstory-title,
+            .fg-wines-title,
+            .fg-craft-title,
+            .fg-moment-title {
+                font-size: 28px;
+            }
+            
+            .fg-table-label {
+                font-size: 11px;
+                width: 40%;
+                display: block;
+                padding-right: 0;
+                padding-bottom: 8px;
+            }
+            
+            .fg-table-value {
+                font-size: 13px;
+                display: block;
+            }
+            
+            .fg-table td {
+                padding: 15px 0;
+            }
+            
+            .fg-moment-quote {
+                font-size: 18px;
+            }
+            
+            .fg-bottle-image {
+                max-width: 250px;
+            }
+            
+            .fg-bottle-label {
+                font-size: 20px;
+            }
+            
+            .fg-bottle-meta {
+                font-size: 11px;
+            }
+            
+            .fg-journal-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fg-container">
+        
+        <!-- HERO SECTION -->
+        <div class="fg-hero">
+            <img src="https://i.ibb.co/z9tYH69/Qpv7j-Kkc-RESISm-Q1-VGU9-DA.png" alt="4G Wine Estate Label Artwork" class="fg-hero-image">
+            <div class="fg-hero-content">
+                <div class="fg-hero-title">Gesamtkunstwerk</div>
+                <div class="fg-hero-rule"></div>
+                <div class="fg-hero-subtitle">The First Growth of the Cape</div>
+            </div>
+        </div>
+        
+        <!-- QUOTE SECTION -->
+        <div class="fg-quote-section">
+            <div class="fg-quote-text">
+                "We strive to produce a wine that is very intense and powerful, though displaying detail in flavor to an extent I haven't yet experienced in South African Wines."
+            </div>
+            <div class="fg-quote-author">Prof. Denis Dubourdieu</div>
+        </div>
+        
+        <!-- BACKSTORY SECTION -->
+        <div class="fg-backstory-section">
+            <div class="fg-backstory-container">
+                
+                <div class="fg-backstory-title">The Vision</div>
+                <div class="fg-backstory-subtitle">Four friends. One obsession. South Africa's First Growth.</div>
+                
+                <table class="fg-table">
+                    <tr>
+                        <td class="fg-table-label">The 4 Gs</td>
+                        <td class="fg-table-value">Philipp G. Axt · Giorgio Dalla Cia · Georges Dalla Cia · [Fourth G]</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">First Vintage</td>
+                        <td class="fg-table-value">2010 · Bordeaux blend with Syrah</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Consultant</td>
+                        <td class="fg-table-value">Prof. Denis Dubourdieu · University of Bordeaux</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Mission</td>
+                        <td class="fg-table-value">Create the first Premier Cru of South Africa</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+        
+        <!-- ARCHITECTURE IMAGE 1 (BREAK) -->
+        <div class="fg-image-break">
+            <img src="https://i.ibb.co/YB6YmZ43/4-GW-V01-mod-SK-Mograph-studio-010324-1.jpg" alt="David Chipperfield Architecture" class="fg-break-image">
+        </div>
+        
+        <!-- THE WINES SECTION -->
+        <div class="fg-wines-section">
+            <div class="fg-wines-container">
+                
+                <div class="fg-wines-title">The Wines</div>
+                
+                <table class="fg-table">
+                    <tr>
+                        <td class="fg-table-label">G.</td>
+                        <td class="fg-table-value">The flagship · 100-point scores</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">ZWIZZIRŌN</td>
+                        <td class="fg-table-value">G. 2017 · Perfect 100-point score</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">GOING, GOING, GONE</td>
+                        <td class="fg-table-value">G. 2018 · Victory at 67 Pall Mall, London</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">67 IMIZUZU</td>
+                        <td class="fg-table-value">Limited vintage · 67 refers to 67 Pall Mall</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">The Echo of G.</td>
+                        <td class="fg-table-value">The "little brother" · Accessible excellence</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+        
+        <!-- ARCHITECTURE IMAGE 2 (BREAK) -->
+        <div class="fg-image-break">
+            <img src="https://i.ibb.co/mr5r8kt4/4-GW-V10-SK-Mograph-studio-010324.jpg" alt="Franschhoek Estate" class="fg-break-image">
+        </div>
+        
+        <!-- THE CRAFT SECTION -->
+        <div class="fg-craft-section">
+            <div class="fg-craft-container">
+                
+                <div class="fg-craft-title">The Pursuit</div>
+                <div class="fg-craft-subtitle">Nothing is left to chance.</div>
+                
+                <table class="fg-table">
+                    <tr>
+                        <td class="fg-table-label">Terroir</td>
+                        <td class="fg-table-value">~20 micro-plots across Western Cape · Some only a few rows</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Selection</td>
+                        <td class="fg-table-value">Hand-harvested · Every berry checked 3 times</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Labels</td>
+                        <td class="fg-table-value">Sebastian Blinde · Berlin artist · Flora & fauna</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Barrels</td>
+                        <td class="fg-table-value">French oak · Hand-selected</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Corks</td>
+                        <td class="fg-table-value">Portugal · Best available</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Cases</td>
+                        <td class="fg-table-value">African timber from Ghana</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Production</td>
+                        <td class="fg-table-value">Minute quantities · Some vintages ~1,943 bottles</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+        
+        <!-- ARCHITECTURE IMAGE 3 (BREAK) -->
+        <div class="fg-image-break">
+            <img src="https://i.ibb.co/2YYkmSnK/1733-dca-4g-wine-estate-filippo-bolognese-images-06.jpg" alt="Rammed Earth Architecture" class="fg-break-image">
+        </div>
+        
+        <!-- THE MOMENT SECTION -->
+        <div class="fg-moment-section">
+            <div class="fg-moment-container">
+                
+                <div class="fg-moment-title">The Judgment</div>
+                <div class="fg-moment-subtitle">Hamburg, 2014</div>
+                
+                <table class="fg-table">
+                    <tr>
+                        <td class="fg-table-label">Blind Tasting</td>
+                        <td class="fg-table-value">G. 2014 vs. First Growth Bordeaux · 100-point Pingus</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Result</td>
+                        <td class="fg-table-value">G. wins · First place</td>
+                    </tr>
+                    <tr>
+                        <td class="fg-table-label">Significance</td>
+                        <td class="fg-table-value">Comparable to 1976 Judgment of Paris</td>
+                    </tr>
+                </table>
+                
+                <div class="fg-moment-quote">
+                    "A world class red that is surely the 'First Growth' of South Africa and imminently the country's finest wine."
+                </div>
+                <div class="fg-moment-author">Tim Gaiser · Master Sommelier</div>
+                
+            </div>
+        </div>
+        
+        <!-- BOTTLE SHOWCASE SECTION -->
+        <div class="fg-bottle-section">
+            <div class="fg-bottle-container">
+                <img src="https://i.ibb.co/gZ45Wy5Y/HKFWYN7-Td6-Ji5-GPx-WRzj-Q-pb-x960.png" alt="GOING, GOING, GONE" class="fg-bottle-image">
+                <div class="fg-bottle-label">G. 2018 GOING, GOING, GONE</div>
+                <div class="fg-bottle-meta">Victory at 67 Pall Mall · London</div>
+            </div>
+        </div>
+        
+        <!-- JOURNAL SECTION (CTA) -->
+        <div class="fg-journal-section">
+            <div class="fg-journal-title">The Collector's Journal</div>
+            <div class="fg-journal-subtitle">A masterpiece demands documentation</div>
+            
+            <div class="fg-journal-book">
+                <div class="fg-journal-book-inner">
+                    <img src="https://i.ibb.co/6RVYbCxc/Untitled-design-77.png" alt="4G Wine Estate Collector's Journal" class="fg-journal-book-image">
+                </div>
+            </div>
+            
+            <button id="fg-journal-trigger" class="fg-journal-button">Open My Journal →</button>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="fg-footer">
+            <div class="fg-footer-tagline">Experience the Gesamtkunstwerk</div>
+            <div class="fg-footer-contact">
+                <a href="mailto:info@4g-wines.com" class="fg-footer-link">info@4g-wines.com</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
